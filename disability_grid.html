@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Accessible Grid</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-areas: 
+        "card1 card1 card1 card1"
+        "card2 card3 card4 card5"
+        "card6 card6 card6 card6";
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 15px;
+      padding: 20px;
+      max-width: 800px;
+    }
+
+    .card {
+      border: 2px solid #4a90e2;
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 15px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    #card1 {
+      grid-area: card1;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    #card6 {
+      grid-area: card6;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    #card2, #card3, #card4, #card5 {
+      grid-area: auto;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .grid-container {
+        grid-template-areas: 
+          "card1"
+          "card2"
+          "card3"
+          "card4"
+          "card5"
+          "card6";
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        text-align: left;
+      }
+    }
+
+    /* Focus and Hover States */
+    .card:hover {
+      background-color: #eef4fc;
+    }
+
+    .card:focus {
+      outline: 3px solid #4a90e2;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-container">
+    <div id="card1" class="card" tabindex="0" aria-labelledby="card1-title">
+      <h2 id="card1-title">Students with Disabilities</h2>
+      <p>A wide range of challenges that can impact their academic and social experiences:</p>
+    </div>
+    <div id="card2" class="card" tabindex="0" aria-labelledby="card2-title">
+      <h3 id="card2-title">Accessibility Barriers</h3>
+        <p>Physical spaces</p>
+        <p>Course materials</p>
+        <p>Digital platforms</p>
+        <p>Inaccessible lecture halls</p>
+        <p>Outdated websites</p>
+        <p>Inaccessible online resources</p>
+        <p>Lack of accommodations for assistive technologies</p>
+    </div>
+    <div id="card3" class="card" tabindex="0" aria-labelledby="card3-title">
+      <h3 id="card3-title">Complex Processes</h3>
+      <p>Accommodation requests involve time-consuming systems.</p>
+      <p>Students may not know how to navigate these processes.</p>
+      <p>Inconsistent policies across departments.</p>
+      <p>Limited information on available resources.</p>
+      <p>Accommodation requests: Navigating bureaucratic systems.</p>
+    </div>
+    <div id="card4" class="card" tabindex="0" aria-labelledby="card4-title">
+      <h3 id="card4-title">Limited Support</h3>
+      <p>Inexperienced staff</p>
+      <p>Lack of understanding of their needs</p>
+      <p>Insufficient training for faculty and staff</p>
+      <p>Limited access to specialized support services</p>
+      <p>Inadequate resources for students with disabilities</p>
+    </div>
+    <div id="card5" class="card" tabindex="0" aria-labelledby="card5-title">
+      <h3 id="card5-title">Financial Challenges</h3>
+      <p>Specialized equipment costs</p>
+      <p>Limited access to scholarships</p>
+      <p>Increased tuition fees</p>
+      <p>Transportation costs</p>
+      <p>Increased living expenses</p>
+      <p>Limited access to financial aid</p>
+      <p>Increased costs for specialized services</p>
+    </div>
+    <div id="card6" class="card" tabindex="0" aria-labelledby="card6-title">
+      <h3 id="card6-title">Mental Health Concerns</h3>
+      <p>Coping with stress, anxiety, and burnout.</p>
+      <p>Isolation and lack of support networks.</p>
+      <p>Difficulty in accessing mental health resources.</p>
+      <p>Stigma surrounding mental health issues.</p>
+      <p>Limited understanding of mental health needs.</p>
+      <p>Inadequate mental health resources.</p>
+    </div>
+  </div>
+</body>
+</html>
